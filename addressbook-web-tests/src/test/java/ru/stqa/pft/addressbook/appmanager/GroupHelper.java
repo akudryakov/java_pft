@@ -32,7 +32,7 @@ public class GroupHelper extends BaseHelper {
     click(By.name("selected[]"));
   }
 
-  public void initGpoupModification() {
+  public void initGroupModification() {
     click(By.name("edit"));
   }
 

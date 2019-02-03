@@ -38,10 +38,6 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  protected void goToHomePage() {
-    wd.findElement(By.linkText("home")).click();
-  }
-
   public ContactHelper getContactHelper() {
     return contactHelper;
   }

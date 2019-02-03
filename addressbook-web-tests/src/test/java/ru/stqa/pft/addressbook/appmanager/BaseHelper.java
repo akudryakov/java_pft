@@ -5,10 +5,10 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class HelperBase {
+public class BaseHelper {
   protected ChromeDriver wd;
 
-  public HelperBase(ChromeDriver wd) {
+  public BaseHelper(ChromeDriver wd) {
     this.wd = wd;
   }
 

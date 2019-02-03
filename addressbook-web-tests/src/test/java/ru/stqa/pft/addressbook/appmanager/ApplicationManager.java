@@ -6,11 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+
   ChromeDriver wd;
 
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
   private SessionHelper sessionHelper;
+  private ContactHelper contactHelper;
 
   public void init() {
     wd = new ChromeDriver();
@@ -19,6 +21,7 @@ public class ApplicationManager {
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
+    contactHelper = new ContactHelper(wd);
     sessionHelper.login("admin", "secret");
   }
 
@@ -33,5 +36,13 @@ public class ApplicationManager {
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
+  }
+
+  protected void goToHomePage() {
+    wd.findElement(By.linkText("home")).click();
+  }
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
   }
 }

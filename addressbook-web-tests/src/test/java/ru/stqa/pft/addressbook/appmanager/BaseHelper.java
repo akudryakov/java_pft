@@ -3,12 +3,13 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseHelper {
-  protected ChromeDriver wd;
+  protected WebDriver wd;
 
-  public BaseHelper(ChromeDriver wd) {
+  public BaseHelper(WebDriver wd) {
     this.wd = wd;
   }
 

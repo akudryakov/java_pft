@@ -62,4 +62,14 @@ public class ContactHelper extends BaseHelper {
   public void update() {
     click(By.xpath("//div[@id='content']/form/input[22]"));
   }
+
+  public void createContract(ContactData contract) {
+    addNewUser();
+    fillUsersInfo(contract,true );
+    submit();
+  }
+
+  public boolean isThereAContract() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }

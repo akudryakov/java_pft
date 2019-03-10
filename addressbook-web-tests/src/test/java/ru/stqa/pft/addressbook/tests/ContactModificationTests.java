@@ -24,8 +24,10 @@ public class ContactModificationTests extends TestBase {
             "MOD4",
             "MODtest@testmail.test",
             "MODtest2@testmail.test",
-            "MODtest3@testmail.test"
-            )
+            "MODtest3@testmail.test",
+            null
+            ),
+            false
     );
     app.getContactHelper().update();
     app.getNavigationHelper().goToHomePage();

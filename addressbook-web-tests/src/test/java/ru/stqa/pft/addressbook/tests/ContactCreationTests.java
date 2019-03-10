@@ -23,8 +23,10 @@ public class ContactCreationTests extends TestBase {
             "4",
             "test@testmail.test",
             "test2@testmail.test",
-            "test3@testmail.test"
-            )
+            "test3@testmail.test",
+            "test1"
+            ),
+            true
     );
     app.getContactHelper().submit();
     app.getNavigationHelper().goToHomePage();

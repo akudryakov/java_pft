@@ -72,8 +72,10 @@ public class ContactHelper extends BaseHelper {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element: elements) {
-      String name = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[3]")).getText();
-      String lastName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[2]")).getText();
+      String name = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[" + (2 + elements.indexOf(element)) + "]/td[3]")).getText();
+      //String name = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[3]")).getText(); - не работает обычный хпасс т.к. берется всегда вторая строка таблицы
+      String lastName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[" + (2 + elements.indexOf(element)) + "]/td[2]")).getText();
+      //String lastName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[2]")).getText();  - не работает т.к. берется всегда 2 строка таблицы
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       ContactData contact = new ContactData(id, name, lastName, null, null, null,null);
       contacts.add(contact);

@@ -22,7 +22,7 @@ public class ContactData {
   }
 
     public ContactData(int Id, String name, String lastName, String address, String email1, String phoneNumber, String group) {
-    this.id = id;
+    this.id = Id;
     this.name = name;
     this.lastName = lastName;
     this.address = address;
